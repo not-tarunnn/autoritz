@@ -1,4 +1,4 @@
-body {
+  body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
   margin: 0;
@@ -108,6 +108,34 @@ body {
   font-size: 16px;
 }
 
+
+@media (max-width: 980px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  .search-box{
+    display: none;
+  }
+  .logo img{
+    height: 15vh;
+    margin-left: -10%;
+  }
+  .header{
+    height: 10vh;
+  }
+  
+}
+
 .footer {
   background-color: #333;
   color: white;
@@ -135,6 +163,7 @@ body {
   padding: 40px 20px;
   gap: 30px; /* optional spacing between columns */
 }
+
 
 .footer-map{
   flex: 1 1 250px;
@@ -259,6 +288,16 @@ body {
   margin-bottom: 2%;
   }
 }
+@media(max-width:980px){
+  .footer-top{
+    display:block ;
+  }
+  .footer-bottom{
+    font-size: 1.5rem;
+    margin-left: 25%;
+    text-align: center;
+  }
+}
 
 .footer-contact li.footer-location {
   margin-bottom: 0;     /* no extra gap below location */
@@ -298,7 +337,7 @@ body {
 
         /* Content (text) styling */
         .content {
-            position: absolute;
+            position: relative;
             top: 4rem;
             left: 25vw;
             z-index: 1; /* Ensures the text is above the overlay */
@@ -310,6 +349,22 @@ body {
             letter-spacing: 5px;
         }
 
+        /* Default: inline (no break) */
+.line-break {
+  display: inline;
+}
+
+/* Media query: force break by turning into block */
+@media (max-width: 980px) {
+  .line-break {
+    display: block;
+  }
+   .content{
+    left: 25vw;
+    top: 35vw;
+    font-size: 10rem;
+  }
+}
 
               /* Parent container for section positioning */
         .container {
@@ -387,6 +442,7 @@ body {
   padding: 40px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
+  height: 60vh;
 }
 
 .why-autoritz h2 {
@@ -451,6 +507,34 @@ body {
   margin-top: 10px;
 }
 
+@media(max-width:980px){
+  .cards {
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center the cards horizontally */
+    gap: 3rem; /* Smaller gap if needed */
+    margin-bottom: 3rem;
+  }
+ .card {
+    width: 100%; /* Optional: make card full width on small screens */
+    max-width: 50%; /* Or cap it so it doesn’t stretch too wide */
+    }
+    .card h3{
+      font-size: 3rem;
+    }
+    .card p{
+      font-size: 2rem;
+    }
+    .emoji{
+      font-size: 7rem;
+    }
+.why-autoritz h2{
+  font-size: 5rem;
+  margin-bottom: 10%;
+}
+.why-autoritz{
+  height: 90vh;
+}
+}
 
 .about {
   padding: 50px;
@@ -625,8 +709,20 @@ body {
 }
 
 @media(max-width:980px){
+ 
   .faq-section h2{
     font-size: 5rem;
+  }
+  .faq-question{
+    font-size: 4rem;
+    width: 95vw;
+    margin-left: -15%;
+  }
+  .faq-answer{
+    font-size: 4rem;
+    width: 95vw;
+    margin-left: -15%;
+    margin-bottom: 10%;
   }
   
 }
@@ -951,4 +1047,42 @@ select {
  select option {
  color: black; /* Set option text color to black */
  
+}
+@media(max-width:980px){
+  .contact-section{
+    display: table-row;
+  }
+  .contact-content h2{
+    font-size: 7rem ;
+  }
+  .contact-content p{
+    font-size: 2rem;
+  }
+
+  .booking-form{
+    margin-left: 0rem;
+    width: 90vw;
+    height: 80vh;
+  }
+  .booking-form h2{
+    font-size: 4rem;
+    margin-bottom: 10%;
+  }
+  .booking-form label{
+    font-size: 3rem;
+  }
+  .booking-form input {
+  font-size: 2rem;
+  height: 5vh;
+  margin-bottom: 8%;
+  }
+  .submit-btn{
+    height: 5vh;
+    font-size: 3rem;
+    border-radius: 100px;
+    margin-top: 5%;
+  }
+  select{
+    height: 5vh;
+  }
 }

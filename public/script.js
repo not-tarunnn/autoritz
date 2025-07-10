@@ -49,3 +49,14 @@ setInterval(nextSlide, 5000); // slide every 5 seconds
             video.pause();
             video.currentTime = video.duration; // Make sure the video stops at the last frame
         });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  });
+
