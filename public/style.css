@@ -1063,7 +1063,7 @@ select {
   .booking-form{
     margin-left: 0rem;
     width: 90vw;
-    height: 80vh;
+    height: 70%;
   }
   .booking-form h2{
     font-size: 4rem;
@@ -1078,13 +1078,13 @@ select {
   margin-bottom: 8%;
   }
   .submit-btn{
-    height: 5vh;
+    height: 1%;
     font-size: 3rem;
     border-radius: 100px;
     margin-top: 5%;
   }
   select{
-    height: 5vh;
+    height: 1%;
     font-size: 3rem;
   }
 }
