@@ -39,3 +39,13 @@ dots.forEach((dot, i) => {
 });
 
 setInterval(nextSlide, 5000); // slide every 5 seconds
+
+
+     // Get the video element
+        var video = document.querySelector('.video-background');
+
+        // Event listener to stop the video once it finishes playing
+        video.addEventListener('ended', function() {
+            video.pause();
+            video.currentTime = video.duration; // Make sure the video stops at the last frame
+        });
