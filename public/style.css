@@ -338,7 +338,7 @@
         /* Content (text) styling */
         .content {
             position: relative;
-            top: 4rem;
+            top: 15rem;
             left: 25vw;
             z-index: 1; /* Ensures the text is above the overlay */
             color: white;
