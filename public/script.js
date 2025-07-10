@@ -51,12 +51,3 @@ setInterval(nextSlide, 5000); // slide every 5 seconds
         });
 
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  });
-
