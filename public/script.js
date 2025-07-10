@@ -51,3 +51,34 @@ setInterval(nextSlide, 5000); // slide every 5 seconds
         });
 
 
+const menuIcon = document.getElementById('menuIcon');
+const menuOverlay = document.getElementById('menuOverlay');
+
+function toggleMenu() {
+  const isActive = menuOverlay.classList.toggle('active');
+  document.body.classList.toggle('no-scroll', isActive);
+}
+
+menuIcon.addEventListener('click', toggleMenu);
+
+// Optional: Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    document.body.classList.remove('no-scroll');
+  });
+});
+
+// Get the overlay and close button
+const overlay = document.getElementById('menuOverlay');
+const closeBtn = document.getElementById('closeBtn');
+
+// Toggle overlay visibility
+closeBtn.addEventListener('click', () => {
+  overlay.classList.remove('active');
+});
+
+// To open the overlay, add this somewhere in your script:
+function openMenu() {
+  overlay.classList.add('active');
+}

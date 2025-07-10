@@ -5,45 +5,14 @@
   padding: 0;
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0); /* transparent white */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5vh;
-}
 
-.logo img {
-  height: 50px;           /* default height */
-  min-height: 100px;       /* set minimum height */
-  min-width: 100px;       /* set minimum width, adjust as needed */
-  object-fit: contain;    /* keep aspect ratio safe */
-  margin-left: 40%;
-}
-
-
-.navbar {
-  display: flex;
-  margin-left: 10%;
-  gap: 4rem;
-}
-
-
-.navbar a {
+/* Logo */
+.logo a {
+  color: rgba(255, 255, 255, 0);
+  font-size: 1.5rem;
+  font-weight: bold;
   text-decoration: none;
-  color: #222;
-  font-weight: 500;
 }
-
-
 .dropdown {
   position: relative;
 }
@@ -54,7 +23,7 @@
   position: absolute;
   top: 100%;
   left: -25%;
-  background: (0,0,0,0);
+  background: rgba(0,0,0,0.6);
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
   z-index: 10;
@@ -78,10 +47,12 @@
   color: #333;
   padding: 10px 15px;
   white-space: nowrap;
+  width: 83%;
 }
 
 .dropdown-menu a:hover {
   background: #f0f0f0;
+  color: #000;
 }
 
 
@@ -109,33 +80,169 @@
 }
 
 
-@media (max-width: 980px) {
-  .navbar {
-    display: none;
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-  .search-box{
-    display: none;
-  }
-  .logo img{
-    height: 15vh;
-    margin-left: -10%;
-  }
-  .header{
-    height: 10vh;
-  }
+/* Header layout updated */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+ background: rgb(0, 0, 0,0.6); /* transparent white */
+  backdrop-filter: blur(10px);          /* blur the background */
+  -webkit-backdrop-filter: blur(10px);  /* for Safari support */
+  padding: 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  z-index: 2000;
   
 }
+.logo img {
+  height: 120px;
+  margin-left: 50px ;
+}
 
+/* Desktop nav alignment fix */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 1335px) {
+  .desktop-nav {
+    display: flex;
+    gap: 2rem;
+    margin-left: 9% ;
+  }
+
+  .menu-icon,
+  .overlay {
+    display: none !important;
+  }
+}
+
+/* Desktop Nav */
+.desktop-nav {
+  display: none;
+}
+
+.desktop-nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 1366px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-icon,
+  .overlay {
+    display: none !important;
+  }
+ 
+}
+
+
+/* Mobile Menu Icon */
+.menu-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1002;
+  margin-right: 50px;
+}
+
+.menu-icon span {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10%);
+  transition: all 0.4s ease;
+}
+
+.overlay.active {
+  opacity: 0.95;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Mobile Nav Links */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 5rem;
+  text-align: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #888;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 70px;
+  font-size: 150px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+@media(max-width:980px){
+  .header{
+    height: 10rem;
+  }
+  .logo img{
+    height: 200px;
+  }
+  .menu-icon span{
+    height: 8px;
+    width: 72px;
+  }
+  .menu-icon{
+    height: 50px;
+    margin-right: 100px;
+  }
+}
 .footer {
   background-color: #333;
   color: white;
@@ -325,7 +432,7 @@
         }
 
         /* Transparent black overlay */
-        .overlay {
+        .overlayb {
             position: absolute;
             top: 0;
             left: 0;

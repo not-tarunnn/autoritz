@@ -12,18 +12,22 @@
 </head>
 <body>
 
-<header>
-    <div class="header">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Woodpark Logo">
-      </div>
-      <nav class="navbar">
-   
-  <a href="#">Home</a>
+<header class="header">
 
-  <div class="dropdown">
+    <!-- Logo (shown on both desktop and mobile) -->
+  <div class="logo">
+  <a href="#"><img src="assets/logo.png" alt="Logo" height="40"></a>
+</div>
+
+
+  <!-- Desktop Navigation -->
+  <nav class="desktop-nav">
+    <a href="#">Home</a>
+   
+      <div class="dropdown">
     <a href="#">Inventory ▼</a>
     <div class="dropdown-menu">
+      <a href="#"></a>
       <a href="#">All Cars</a>
       <a href="#">New Arrivals</a>
       <a href="#">Hatchbacks</a>
@@ -38,23 +42,39 @@
     <div class="dropdown">
     <a href="#">Services ▼</a>
     <div class="dropdown-menu">
+      <a href="#"></a>
       <a href="#">Detailing</a>
       <a href="#">Financing</a>
     </div>
   </div>
 
-  <a href="#">Sell us</a>
-  <a href="#">Contact</a>
-</nav>
-
-      <div class="search-box">
+    <a href="#">Sell Us</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="search-box">
         <input type="text" placeholder="Search...">
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </div>
 
-     
-  </header>
+  <!-- Mobile Menu Icon -->
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- Mobile Fullscreen Overlay Menu -->
+<div class="overlay" id="menuOverlay">
+  <button class="close-btn" id="closeBtn">&times;</button>
+  <nav class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Inventory</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</div>
 
 <main>
     
@@ -66,7 +86,7 @@
         </video>
 
         <!-- Transparent black overlay -->
-        <div class="overlay"></div>
+        <div class="overlayb"></div>
 
         <!-- Content (text) in the top-left corner -->
         <div class="content">
@@ -431,7 +451,8 @@ document.querySelectorAll("h1, h2, h3, p, a, span, li").forEach(el => {
     !el.closest(".footer-float-btn-abc")&&
     !el.closest(".card")&&
     !el.closest(".card-overlay")&&
-    !el.closest(".container")
+    !el.closest(".container")&&
+    !el.closest(".desktop-nav")
   ) {
     gsap.from(el, {
       opacity: 0,
